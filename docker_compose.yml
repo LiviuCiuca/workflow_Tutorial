@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  php:
+    build: .
+    ports:
+      - 80:80
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo:5.0
